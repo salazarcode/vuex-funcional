@@ -6,13 +6,16 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 
 state: {
-    nombre: ''
+    personas: []
 },
 
 mutations: {
     setNombre (state, payload) 
     {
-        state.nombre = payload.newString;
+        state.personas.push({
+            nombre: payload.newString
+        });
+        //state.nombre = payload.newString;
     }
 }
 

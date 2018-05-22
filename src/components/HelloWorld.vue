@@ -4,7 +4,11 @@
     <input type="text" v-model="nombre">
     <button @click="guardar">Guardar</button>
 
-    <h2>El valor de nombre ne el store es: {{ this.$store.state.nombre  }}</h2>
+    <ul>
+      <li v-for="persona in personas">
+        {{ persona.nombre }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -13,7 +17,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      nombre: ''
+      personas: this.$store.state.personas
     }
   },
   methods: {
